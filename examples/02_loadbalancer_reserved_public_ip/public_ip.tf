@@ -1,5 +1,5 @@
 module "public_ip" {
-  source = "../.."
+  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name                         = "fk-loadbalancer-reserved-public-ip"
   compartment_ocid             = var.compartment_ocid

@@ -15,6 +15,8 @@ This setup combines:
 
 ## Architecture Overview
 
+<img src="02_loadbalancer_reserved_public_ip_architecture.png" width="900"/>
+
 This deployment creates:
 - A dedicated VCN with one **public subnet** for the load balancer
 - One **private subnet** for the application instances
@@ -84,7 +86,7 @@ this example enables drift tolerance on `private_ip_id` in the public IP module:
 
 ```hcl
 module "public_ip" {
-  source = "../.."
+  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name                         = "fk-loadbalancer-reserved-public-ip"
   compartment_ocid             = var.compartment_ocid
@@ -94,6 +96,47 @@ module "public_ip" {
 
 That preserves the reserved public IP as a reusable building block
 without forcing the module to own the load balancer private endpoint internals.
+
+---
+
+## OCI Console And Runtime Verification
+
+### Load Balancer Status
+
+<img src="02_loadbalancer_reserved_public_ip_lb_status.png" width="900"/>
+
+This view confirms that the public OCI Load Balancer is deployed successfully,
+is active, and exposes the expected public frontend IP address.
+
+### Backend Health
+
+<img src="02_loadbalancer_reserved_public_ip_lb_backend_status.png" width="900"/>
+
+This view shows that the backend set contains healthy private backend instances
+registered from the instance pool.
+
+### Instance Pool Status
+
+<img src="02_loadbalancer_reserved_public_ip_instance_pool_status.png" width="900"/>
+
+This view confirms that the OCI instance pool is running
+with the expected target instance count for the backend tier.
+
+### Reserved Public IP Details
+
+<img src="02_loadbalancer_reserved_public_ip_reserved_ip_details.png" width="900"/>
+
+This view confirms that the reserved public IP resource exists independently
+and is assigned as the public frontend identity used by the load balancer.
+
+### HTTP Access Through The Load Balancer
+
+<img src="02_loadbalancer_reserved_public_ip_http_access.png" width="900"/>
+
+This runtime verification confirms that:
+- the reserved public IP is reachable from the internet
+- traffic is flowing through the public load balancer
+- the request is served by a healthy backend instance from the pool
 
 ---
 

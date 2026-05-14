@@ -119,7 +119,7 @@ The key integration point is the explicit handoff from compute to public IP:
 
 ```hcl
 module "public_ip" {
-  source = "../.."
+  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name             = "fk-compute-reserved-public-ip"
   compartment_ocid = var.compartment_ocid

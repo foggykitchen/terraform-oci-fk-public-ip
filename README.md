@@ -159,9 +159,9 @@ This repository intentionally avoids burying OCI public IP behavior behind unrel
 
 ## Related Modules & Training
 
-- [terraform-oci-fk-compute](https://github.com/mlinxfeld/terraform-oci-fk-compute)
+- [terraform-oci-fk-compute](https://github.com/foggykitchen/terraform-oci-fk-compute)
 - [terraform-oci-fk-loadbalancer](https://github.com/mlinxfeld/terraform-oci-fk-loadbalancer)
-- [terraform-oci-fk-vcn](https://github.com/mlinxfeld/terraform-oci-fk-vcn)
+- [terraform-oci-fk-vcn](https://github.com/foggykitchen/terraform-oci-fk-vcn)
 - [terraform-az-fk-public-ip](https://github.com/mlinxfeld/terraform-az-fk-public-ip)
 
 ---

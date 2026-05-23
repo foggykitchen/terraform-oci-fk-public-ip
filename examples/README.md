@@ -56,7 +56,7 @@ tofu apply
 
 - [FoggyKitchen OCI Public IP Module (terraform-oci-fk-public-ip)](../)
 - [FoggyKitchen OCI Compute Module (terraform-oci-fk-compute)](https://github.com/foggykitchen/terraform-oci-fk-compute)
-- [FoggyKitchen OCI Load Balancer Module (terraform-oci-fk-loadbalancer)](https://github.com/mlinxfeld/terraform-oci-fk-loadbalancer)
+- [FoggyKitchen OCI Load Balancer Module (terraform-oci-fk-loadbalancer)](https://github.com/foggykitchen/terraform-oci-fk-loadbalancer)
 - [FoggyKitchen OCI VCN Module (terraform-oci-fk-vcn)](https://github.com/foggykitchen/terraform-oci-fk-vcn)
 
 ---

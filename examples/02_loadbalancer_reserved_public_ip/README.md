@@ -153,7 +153,7 @@ The key integration point is the handoff into the load balancer module:
 
 ```hcl
 module "loadbalancer" {
-  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-loadbalancer.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-loadbalancer.git?ref=v1.0.0"
 
   name                  = "fk-public-ip-lb"
   compartment_ocid      = var.compartment_ocid

@@ -95,7 +95,7 @@ module "public_ip" {
 }
 
 module "loadbalancer" {
-  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-loadbalancer.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-loadbalancer.git?ref=v1.0.0"
 
   name                  = "fk-public-lb"
   compartment_ocid      = var.compartment_ocid
@@ -160,7 +160,7 @@ This repository intentionally avoids burying OCI public IP behavior behind unrel
 ## Related Modules & Training
 
 - [terraform-oci-fk-compute](https://github.com/foggykitchen/terraform-oci-fk-compute)
-- [terraform-oci-fk-loadbalancer](https://github.com/mlinxfeld/terraform-oci-fk-loadbalancer)
+- [terraform-oci-fk-loadbalancer](https://github.com/foggykitchen/terraform-oci-fk-loadbalancer)
 - [terraform-oci-fk-vcn](https://github.com/foggykitchen/terraform-oci-fk-vcn)
 - [terraform-az-fk-public-ip](https://github.com/mlinxfeld/terraform-az-fk-public-ip)
 

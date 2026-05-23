@@ -86,7 +86,7 @@ this example enables drift tolerance on `private_ip_id` in the public IP module:
 
 ```hcl
 module "public_ip" {
-  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name                         = "fk-loadbalancer-reserved-public-ip"
   compartment_ocid             = var.compartment_ocid

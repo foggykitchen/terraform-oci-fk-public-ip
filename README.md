@@ -75,7 +75,7 @@ All examples are runnable and demonstrate **incremental public IP patterns**, st
 
 ```hcl
 module "public_ip" {
-  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name             = "fk-instance-public-ip"
   compartment_ocid = var.compartment_ocid
@@ -87,7 +87,7 @@ module "public_ip" {
 
 ```hcl
 module "public_ip" {
-  source = "git::https://github.com/mlinxfeld/terraform-oci-fk-public-ip.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v1.0.0"
 
   name                         = "fk-lb-public-ip"
   compartment_ocid             = var.compartment_ocid

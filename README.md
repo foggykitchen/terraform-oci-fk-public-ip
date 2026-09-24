@@ -2,7 +2,7 @@
 
 This repository contains a reusable **Terraform/OpenTofu module** and progressive examples for deploying **Oracle Cloud Infrastructure (OCI) Public IP** resources in a clean, explicit, and architecture-aware way.
 
-It is part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.com/courses-2/)** and is designed as a dedicated **public IP identity building block** for OCI networking.
+It is part of the **[FoggyKitchen.com training ecosystem](https://foggykitchen.com/)** and is designed as a dedicated **public IP identity building block** for OCI networking.
 
 Support expectations are documented in [SUPPORT.md](SUPPORT.md).
 

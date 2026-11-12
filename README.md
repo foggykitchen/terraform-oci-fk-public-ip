@@ -77,7 +77,7 @@ All examples are runnable and demonstrate **incremental public IP patterns**, st
 
 ```hcl
 module "public_ip" {
-  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v2.0.0"
 
   name             = "fk-instance-public-ip"
   compartment_ocid = var.compartment_ocid
@@ -89,7 +89,7 @@ module "public_ip" {
 
 ```hcl
 module "public_ip" {
-  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-public-ip.git?ref=v2.0.0"
 
   name                         = "fk-lb-public-ip"
   compartment_ocid             = var.compartment_ocid
@@ -97,7 +97,7 @@ module "public_ip" {
 }
 
 module "loadbalancer" {
-  source = "git::https://github.com/foggykitchen/terraform-oci-fk-loadbalancer.git?ref=v1.0.0"
+  source = "git::https://github.com/foggykitchen/terraform-oci-fk-loadbalancer.git?ref=v2.0.0"
 
   name                  = "fk-public-lb"
   compartment_ocid      = var.compartment_ocid
@@ -176,3 +176,18 @@ See [LICENSE](LICENSE) for details.
 ---
 
 © 2026 [FoggyKitchen.com](https://foggykitchen.com) - Cloud. Code. Clarity.
+
+## Requirements
+
+| Requirement | Version |
+|---|---|
+| OpenTofu | >= 1.11.0 (tested with 1.11.6) |
+| oracle/oci | >= 9.12.1, < 10.0.0 |
+
+## BREAKING: requires OCI provider >= 9.12.1
+
+OCI provider 6.x, 7.x and 8.x are no longer supported. Upgrade all composed modules together, run `tofu init -upgrade`, and review a plan before applying. Existing module inputs, outputs and resource addresses are preserved.
+
+Every embedded example is covered by a plan-only mocked test. CI uses OpenTofu 1.11.6 and exact OCI 9.12.1. Mocked plans verify configuration and expressions; they do not verify tenancy permissions, regional availability or service limits.
+
+Run the same checks locally with `python3 scripts/oci9_check.py --root .` (or an example path). The helper materializes synthetic IDs in a temporary copy. For unpublished integration branches only, `OCI9_ALLOW_UNRELEASED=1` permits an explicitly logged fallback from the proposed tag to `oci-provider-9`; released tags always take precedence. `--modules-dir /path/to/checkouts` tests local migrated dependencies.
